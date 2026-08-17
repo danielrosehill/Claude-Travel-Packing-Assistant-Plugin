@@ -20,7 +20,7 @@ trips loses the ability to say what a bag weighed leaving home.
 
 - **First positional**: trip name, kebab-case, used as the directory and repo name. Prefer
   a route-and-date form: `bos-ath-tlv-0826`, `tlv-lhr-nov26`. Required.
-- **Second positional** (optional): target parent path. Defaults to `~/repos/github/my-repos`.
+- **Second positional** (optional): target parent path. Defaults to the topic group under `~/repos/github/` that most specifically fits the subject — see `~/repos/github/README.md` for the group list. (`~/repos/github/my-repos/` is no longer the default; it holds only blog repos now.)
 - **`--local-only`**: skip GitHub entirely.
 - **`--public`**: create the GitHub repo public. Default is **private** — a packing workspace
   names the dates a home is empty and lists what is worth stealing from it.
