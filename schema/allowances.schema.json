@@ -35,7 +35,8 @@
         "fetched_on": { "type": "string", "format": "date" },
         "route": {
           "type": "string",
-          "enum": ["webfetch", "geo-egress", "playwright", "browser", "manual"]
+          "description": "How the source was fetched. 'geo-egress' is legacy (route retired 2026-09-02); kept so older trips still validate.",
+          "enum": ["webfetch", "browser", "playwright", "manual", "geo-egress"]
         },
         "confidence": {
           "type": "string",

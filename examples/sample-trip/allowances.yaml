@@ -55,7 +55,7 @@ segments:
     source:
       url: https://example.invalid/meridian/hand-baggage
       fetched_on: 2026-08-15
-      route: geo-egress
+      route: browser
       confidence: assumed
       quote: null
     checked:

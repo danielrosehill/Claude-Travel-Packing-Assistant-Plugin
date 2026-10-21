@@ -57,8 +57,11 @@ gets chosen by default at the desk when none of the others were prepared.
   source (`mcp__gateway__fx__convert` where available), and show both — the amount they will
   be asked for is the local one.
 - The same escalation ladder as policy research applies to fetching fee tables: `WebFetch`
-  first, then a residential-egress server-side fetch, then a browser, then ask the user to
-  paste. Excess-fee pages are among the most aggressively geo-varied pages an airline serves.
+  first, then a real browser (`claude-in-chrome`, Playwright as a last fallback), then ask the
+  user to paste. Excess-fee pages are among the most aggressively geo-varied pages an airline
+  serves, and no route can pick the country the request comes from: use the site's market
+  selector, and if the right point of sale cannot be reached, tell the user the fee is from a
+  different market rather than quoting it as theirs.
 - Record the source and date for every fee, exactly as in `allowances.yaml`. A fee schedule
   from a blog post is not a price.
 

@@ -79,7 +79,7 @@ segments:
     source:
       url: https://en.aegeanair.com/travel-information/baggage/
       fetched_on: 2026-08-16
-      route: webfetch             # webfetch | geo-egress | playwright | browser | manual
+      route: webfetch             # webfetch | browser | playwright | manual
       confidence: confirmed       # confirmed | inferred | assumed
       quote: "1 piece up to 23kg"  # the sentence the numbers came from
     checked:

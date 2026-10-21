@@ -14,7 +14,7 @@ segments: []
 #   source:
 #     url: ""
 #     fetched_on: 2026-01-01
-#     route: webfetch          # webfetch | geo-egress | playwright | browser | manual
+#     route: webfetch          # webfetch | browser | playwright | manual
 #     confidence: confirmed    # confirmed | inferred | assumed
 #     quote: ""
 #   checked:

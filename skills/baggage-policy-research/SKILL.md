@@ -36,15 +36,17 @@ Airline pages are also fare-brand-conditional and route-conditional, so the top-
 Airline sites are heavily bot-walled and often geo-fenced. Escalate; do not give up:
 
 1. `WebFetch` — the default. Try it first on every URL.
-2. If blocked (403, bot wall, empty render), a server-side fetcher on a residential IP. In this
-   environment that is `mcp__gateway__geo-egress__fetch_markdown`, with `egress` set to the
-   country whose version of the site you need — pricing and allowance pages differ by
-   point-of-sale country, and the wrong egress returns a plausible page for the wrong market
-   with no error.
-3. A real browser (`playwright`, or `claude-in-chrome` when the user is present) for pages that
-   render allowances only under JavaScript, or that sit behind the booking login.
-4. Ask the user to open the page and paste it. This is a normal outcome for manage-booking
+2. If blocked (403, bot wall, empty render), or the allowance renders only under JavaScript, or
+   it sits behind the booking login: a real browser — `claude-in-chrome` (the user's own
+   browser) first, `mcp__gateway__playwright__*` only as a last fallback.
+3. Ask the user to open the page and paste it. This is a normal outcome for manage-booking
    pages and is the *highest*-quality source, not a failure.
+
+Pricing and allowance pages differ by point-of-sale country, and none of these routes can make
+the request appear to come from another country — they leave from the user's own location or
+the cloud. Use the site's own country/market selector where it has one and confirm on the page
+which market it shows. If you need a market you cannot select, say so to the user and mark the
+figure `assumed` rather than recording the wrong market's page as the answer.
 
 Save the fetched page to `research/<carrier>-<yyyy-mm-dd>.md` before extracting from it. When
 the figure is later disputed at an airport, the saved page is the evidence.
