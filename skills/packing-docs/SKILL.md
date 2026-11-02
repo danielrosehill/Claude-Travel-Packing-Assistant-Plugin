@@ -118,9 +118,9 @@ paths.
 
 **Email** — send to the configured address with both PDFs attached. Sending mail leaves this
 machine, so say what is being sent and to whom before sending it. With the Gmail/Workspace MCP,
-attachments above roughly 100 KB should go by URL rather than inline base64: presign a PUT to a
-transient object store, upload the file, presign a GET, pass that URL as the attachment, and
-delete the staged object afterwards. Base64ing a PDF into tool arguments works for small files
+attachments above roughly 100 KB should go by URL rather than inline base64: stage each PDF with
+`cloud-storage:stage-file` (`stage.sh <file>` → presigned URL), pass that URL as the attachment, and
+delete the staged object afterwards. Don't improvise another route. Base64ing a PDF into tool arguments works for small files
 and wastes a great deal of context on larger ones.
 
 **Drive / cloud storage** — upload to the configured folder. Never write to the root of a
